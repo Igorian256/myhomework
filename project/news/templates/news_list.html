@@ -1,0 +1,8 @@
+<h1>News List</h1>
+<ul>
+    {% for news in news %}
+    <li><a href="/news/{{ news.pk }}">{{ news.title|censor }}</a></li>
+    <p>{{ news.content|censor|slice:":20" }}</p>
+    <p>Date: {{ news.post_time_in|date:"d.m.Y" }}</p>
+    {% endfor %}
+</ul>
